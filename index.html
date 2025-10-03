@@ -49,19 +49,19 @@
     const starBtn = document.getElementById("starBtn");
     const diamondBtn = document.getElementById("diamondBtn");
 
-    // Function to make rain off-screen
+    // Function to make rain all the way off-screen
     function confettiRain(options) {
       const duration = 2000;
       const end = Date.now() + duration;
 
       (function frame() {
         confetti(Object.assign({}, options, {
-          particleCount: 4,
+          particleCount: 5,
           angle: 90,
           spread: 50,
-          startVelocity: 30,
-          gravity: 1,
-          ticks: 300,
+          startVelocity: 20,
+          gravity: 1,       // makes sure they keep falling
+          ticks: 600,       // long enough lifetime to reach bottom
           origin: { x: Math.random(), y: 0 }
         }));
         if (Date.now() < end) {
@@ -93,18 +93,18 @@
 
       (function frame() {
         confetti({
-          particleCount: 4,
+          particleCount: 5,
           angle: 90,
           spread: 40,
-          startVelocity: 25,
+          startVelocity: 20,
           gravity: 1,
-          ticks: 300,
+          ticks: 600,  // ensures they fall all the way off-screen
           scalar: 1.3,
           shapes: ['square'],
           colors: ['#C0C0C0','#E0E0E0','#A9A9A9'],
           origin: { x: Math.random(), y: 0 },
-          tiltAngle: Math.random() * 180,   // give them a tilt
-          drift: (Math.random() - 0.5) * 2 // makes them sway left-right
+          tiltAngle: Math.random() * 180,
+          drift: (Math.random() - 0.5) * 2
         });
         if (Date.now() < end) {
           requestAnimationFrame(frame);
