@@ -8,41 +8,82 @@
       margin: 0;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #FDCFFA;
       font-family: Arial, sans-serif;
+      gap: 20px;
     }
 
     button {
       background-color: #FF3EA5;
       color: white;
-      font-size: 1.5rem;
-      padding: 15px 30px;
+      font-size: 1.2rem;
+      padding: 12px 25px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: transform 0.2s, background-color 0.2s;
     }
 
     button:hover {
       transform: scale(1.1);
     }
+
+    #starBtn {
+      background-color: #FFD700; /* gold */
+      color: black;
+    }
+
+    #diamondBtn {
+      background-color: #C0C0C0; /* silver */
+      color: black;
+    }
   </style>
 </head>
 <body>
   <button id="confettiBtn">Press for Confetti</button>
+  <button id="starBtn">Press for Stars</button>
+  <button id="diamondBtn">Press for Diamonds</button>
 
   <!-- Confetti script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
   <script>
-    const btn = document.getElementById("confettiBtn");
-    btn.addEventListener("click", () => {
+    const confettiBtn = document.getElementById("confettiBtn");
+    const starBtn = document.getElementById("starBtn");
+    const diamondBtn = document.getElementById("diamondBtn");
+
+    // Rainbow confetti
+    confettiBtn.addEventListener("click", () => {
       confetti({
         particleCount: 150,
         spread: 100,
         origin: { y: 0.6 },
         colors: ['#FF0000','#FF7F00','#FFFF00','#00FF00','#0000FF','#4B0082','#8F00FF']
+      });
+    });
+
+    // Gold stars
+    starBtn.addEventListener("click", () => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        shapes: ['star'],
+        colors: ['#FFD700']
+      });
+    });
+
+    // Silver diamonds
+    diamondBtn.addEventListener("click", () => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        shapes: ['square'], /* closest shape to a diamond */
+        scalar: 1.2,
+        colors: ['#C0C0C0', '#E0E0E0', '#A9A9A9']
       });
     });
   </script>
