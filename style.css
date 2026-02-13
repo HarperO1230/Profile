@@ -10,7 +10,7 @@
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #5f2cff, #00b3ff);
-  color: white;
+  color: pink;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
