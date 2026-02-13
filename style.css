@@ -1,54 +1,207 @@
+/* =====================
+   GLOBAL RESET
+===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #0b0b0b;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5f2cff, #00b3ff);
   color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
+/* =====================
+   NAVBAR
+===================== */
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
-  background: black;
+  align-items: center;
+  padding: 20px 60px;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
 }
 
 nav ul li {
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
 }
 
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* =====================
+   HERO
+===================== */
 .hero {
   height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: 82px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  margin-top: 35px;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  color: black;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 2px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.9);
+}
+
+/* =====================
+   PAGE SECTIONS
+===================== */
+section {
+  padding: 100px 12%;
+}
+
+section h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
   letter-spacing: 4px;
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #00ffff;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
+/* =====================
+   CARDS (acting/music)
+===================== */
+.card {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* =====================
+   GALLERY
+===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   CONTACT FORM
+===================== */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 15px;
+  }
 }
