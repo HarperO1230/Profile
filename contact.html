@@ -1,6 +1,37 @@
-<form action="https://formspree.io/f/xxxxx" method="POST">
-  <input name="Harper Oates" placeholder="Name">
-  <input name="harperoates@gmail.com" placeholder="Email">
-  <textarea name="message"></textarea>
-  <button type="submit">Send</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Harper Oates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Contact Harper Oates</h1>
+  </header>
+
+  <section>
+    <h2>Get in Touch</h2>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2026 Harper Oates. All rights reserved.
+  </footer>
+</body>
+</html>
